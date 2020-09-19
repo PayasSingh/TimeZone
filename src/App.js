@@ -52,11 +52,12 @@ class App extends Component {
 } 
 
   timezone = async (latitude, longitude, counter) => {
+    // for testing
     // var latitude = 43.653226;
     // var longitude = -79.3831843;
 
     try {
-      let response = await axios.get('http://api.timezonedb.com/v2.1/get-time-zone?key=11DHLME82RAS&format=json&by=position&',{
+      let response = await axios.get('https://api.timezonedb.com/v2.1/get-time-zone?key=11DHLME82RAS&format=json&by=position&',{
         params:{
             lat: latitude,
             lng: longitude

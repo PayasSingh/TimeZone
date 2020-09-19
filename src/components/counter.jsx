@@ -14,27 +14,6 @@ class Counter extends Component {
         console.log('Counter - Unmount');
     }
 
-    // constructor (){
-    //     super();
-    //     console.log(this);
-    //     this.state={
-    //         data: '',
-    //     }
-    // }
-    
-    // handleInput(event){
-    //     console.log(event.target.value)
-    //     this.setState({
-    //         data: event.target.value
-    //     })
-    // }
-
-    // handleSubmit = (event) => {
-    //     console.log('submit', this);
-    //     const data = this.state.data;
-    //     console.log('data', data);
-    //     this.setState({ data: data});        //sets the new state (timezone should be set here)
-    // }
 
     handleChange = (event) => {
         
