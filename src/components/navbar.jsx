@@ -4,12 +4,13 @@ import React, { Component } from 'react';
 // use this.props (here destrutured to use totalCounters)
 const NavBar = ({ totalCounters }) => {
     return ( 
-        <nav className="navbar navbar-light bg-light">
-        <a className="navbar-brand" href="#">
-        TimeZone{" "}
+        <nav className="navbar navbar-dark bg-dark ">
+            <a className="navbar-brand m-auto" href="#">
+                TimeZone{" "}
+        {/* TimeZone{" "}
             <span className="badge badge-pill badge-secondary">
                 {totalCounters}
-            </span>
+            </span> */}
         </a>
       </nav>
     );

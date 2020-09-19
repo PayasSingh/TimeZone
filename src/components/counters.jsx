@@ -6,10 +6,10 @@ class Counters extends Component {
         const { onReset, counters, onDelete, onIncrement, onChanges, onSubmit} = this.props;
 
         return (
-        <div>
+        <div align = "center">
             <button
                 onClick={onReset}
-                className="btn btn-secondary btn-sm m-2">
+                className="btn btn-outline-dark m-4">
                 Reset
             </button>
             {counters.map(counter => (
@@ -21,7 +21,7 @@ class Counters extends Component {
                 onSubmit={onSubmit}
                 counter={counter}
             >
-            <p className="serif">Time: {counter.output}</p>
+            <h6>Date & Time: {counter.output}</h6>
             </Counter>
             ))}
 

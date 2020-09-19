@@ -30,10 +30,10 @@ class Counter extends Component {
         // console.log('props', this.props)
         return (
         <div>
-            <input type="text" onChange={ this.handleChange.bind(this) } />
-            <button type="submit" className="btn btn-primary btn-sm m-2" onClick={ this.handleSubmitting }>Submit</button> 
+            <input type="text" onChange={ this.handleChange.bind(this) }/>
+            <button type="submit" className="btn btn-primary m-2" onClick={ this.handleSubmitting }>Submit</button> 
             <button onClick={() => this.props.onDelete(this.props.counter.id)}
-             className="btn btn-danger btn-sm m-2">Delete</button>
+             className="btn btn-danger m-2">Delete</button>
             {this.props.children}          {/* children prop is used to pass complex elements to the children*/}
         </div>
         );
