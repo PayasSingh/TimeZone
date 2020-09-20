@@ -22,11 +22,6 @@ class App extends Component {
     console.log('App-constructor');
   }
 
-  handleDelete = counterId => {
-      const counters = this.state.counters.filter(c => c.id !== counterId);
-      this.setState({ counters })
-  }
-
   geocode = async (location, counter) => {
     try {
       let response = await axios.get('https://maps.googleapis.com/maps/api/geocode/json?',{
@@ -95,7 +90,12 @@ class App extends Component {
       await this.geocode(counters[index].data, counter);
     }
 
-  // TODO: reset is not clearing the input box
+    // delete the counter 
+  handleDelete = counterId => {
+    const counters = this.state.counters.filter(c => c.id !== counterId);
+    this.setState({ counters })
+  }
+  // TODO: reset should clear the input box
   handleReset = () =>{
       const counters = this.state.counters.map(c => {
           c.data = '';
@@ -104,6 +104,16 @@ class App extends Component {
       });
       this.setState({ counters });
   };
+
+  // on clicking Add button, a new counter should be added
+  handleAdd = () =>{
+    const counters = [...this.state.counters];
+    // find id of the last counter and assign new counter with last id+1
+    var lastCounter = counters.length - 1;
+    var lastId = counters[lastCounter].id;
+    const newCounters = counters.concat({ id: lastId + 1, data: '', output: '' });
+    this.setState({ counters: newCounters });
+  }
 
   render() {
     console.log('App - rendered')
@@ -119,6 +129,7 @@ class App extends Component {
         onDelete={this.handleDelete}
         onChanges={this.handleInput}
         onSubmit={this.handleSubmit}
+        onAdd={this.handleAdd}
         />
       </main>
       </React.Fragment>
